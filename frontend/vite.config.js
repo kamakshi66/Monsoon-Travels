@@ -5,5 +5,11 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),
-  tailwindcss(), ]
+  tailwindcss()],
+  preview: {
+    host: true,
+    allowedHosts: ['monsoon-travels-bv8b.onrender.com']
+  
+
+  }
 })
