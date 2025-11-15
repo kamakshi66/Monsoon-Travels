@@ -8,7 +8,7 @@ export default defineConfig({
   tailwindcss()],
   preview: {
     host: true,
-    allowedHosts: ['monsoon-travels-bv8b.onrender.com']
+    allowedHosts: 'all'
   
 
   }
