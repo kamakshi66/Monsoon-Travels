@@ -16,7 +16,7 @@ const BusSeats = ({token}) => {
         const fetchBusDetails = async()=>{
                
             try{
-                const response = await axios(`http://127.0.0.1:8000/api/buses/${busId}`)
+                const response = await axios(`${process.env.REACT_APP_API_URL}/api/buses/${busId}`)
                 setBus(response.data)
                 setSeats(response.data.seats || [])
             }catch(error){

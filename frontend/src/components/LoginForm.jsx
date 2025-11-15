@@ -17,7 +17,7 @@ const LoginForm = ({onLogin}) => {
 const handleSubmit = async(e)=>{
     e.preventDefault()
     try{
-        const response = await axios.post('http://localhost:8000/api/login/',form)
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login/`,form)
         setMessage("login sucessful")
 
         if(onLogin){

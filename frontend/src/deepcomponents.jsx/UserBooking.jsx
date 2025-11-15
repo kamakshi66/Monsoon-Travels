@@ -8,7 +8,7 @@ const UserBookings = ({ token, userId }) => {
   useEffect(() => {
     if (!token || !userId) return;
 
-    fetch(`http://localhost:8000/api/user/${userId}/bookings/`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/user/${userId}/bookings/`, {
       headers: {
         Authorization: `Token ${token}`,
       },

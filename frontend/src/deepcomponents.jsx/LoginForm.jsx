@@ -22,7 +22,7 @@ const LoginForm = ({ onLogin }) => {
         e.preventDefault()
         setIsLoading(true)
         try {
-            const response = await axios.post('http://localhost:8000/api/login/', form)
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login/`, form);
             setMessage('Login Success')
             if (onLogin) {
                 onLogin(response.data.token, response.data.user_id)

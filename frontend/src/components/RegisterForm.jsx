@@ -16,7 +16,7 @@ const RegisterForm = () => {
     const handleSubmit = async(e)=>{
         e.preventDefault()
         try{
-            await axios.post("http://localhost:8000/api/register/",form);
+            await axios.post(`${process.env.REACT_APP_API_URL}/api/register/`,form);
             setMessage('Registration sucess')
         }catch(error){
             setMessage('Registration failed',+ (error.response?.data?.username || error.message))
