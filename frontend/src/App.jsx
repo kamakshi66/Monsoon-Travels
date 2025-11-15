@@ -7,7 +7,7 @@ import BusSeats from './deepcomponents.jsx/BusSeats'
 import UserBookings from './deepcomponents.jsx/UserBooking'
 import Wrapper from './deepcomponents.jsx/Wrapper'
 import LoginForm from './deepcomponents.jsx/LoginForm'
-
+import NotFound from './pages'
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem('token'))
@@ -51,6 +51,12 @@ const handleLogout = ()=>{
           <Route path='/login' element={<LoginForm onLogin ={handleLogin}/>}/>
           <Route path='/bus/:busId' element={<BusSeats token={token}/>}/>
           <Route path='/my-bookings' element={<UserBookings token = {token} userId={userId}/>}/>
+
+
+
+           {/* Catch-all route must be last */}
+    <Route path="*" element={<NotFound />} />
+
       </Routes> 
       </Wrapper>  
 
