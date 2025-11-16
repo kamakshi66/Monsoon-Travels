@@ -160,7 +160,9 @@ const BusSeats = ({ token }) => {
     <h2 className="text-xl font-bold text-gray-800 mb-6">Select Your Seat</h2>
 
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-      {seats.map((seat) => (
+     {/*  {seats.map((seat) => ( */}
+       {Array.isArray(seats) && seats.map((seat) => (
+
         <button
           key={seat.id}
           onClick={() => !seat.is_booked && handleBook(seat.id)}
