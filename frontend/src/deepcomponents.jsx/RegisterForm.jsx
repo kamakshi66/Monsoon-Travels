@@ -17,7 +17,7 @@ const RegisterForm = () => {
         e.preventDefault()
         setIsLoading(true)
         try {
-            await axios.post(`${process.env.REACT_APP_API_URL}/api/register/`, form);
+            await axios.post(`${import.meta.env.VITE_API_URL}/api/register/`, form);
             setMessage('Registration successful! You can now login.')
             setForm({ username: '', email: '', password: '' })
         } catch (error) {

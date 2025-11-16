@@ -8,7 +8,7 @@ const UserBookings = ({ token, userId }) => {
   useEffect(() => {
     if (!token || !userId) return;
 
-    fetch(`${process.env.REACT_APP_API_URL}/api/user/${userId}/bookings/`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/user/${userId}/bookings/`, {
       headers: {
         Authorization: `Token ${token}`,
       },

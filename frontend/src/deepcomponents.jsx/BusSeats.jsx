@@ -11,13 +11,43 @@ const BusSeats = ({ token }) => {
     const [error, setError] = useState(null)
     const [selectedSeat, setSelectedSeat] = useState(null)
 
+
+
+
+
+    console.log("Component loaded");
+    console.log("Env value:", import.meta.env.VITE_API_URL);
+
+
+
+
+
     const { busId } = useParams()
     const navigate = useNavigate()
 
+
+
+    
+
+
+
+
+
     useEffect(() => {
+
+
+      
+
+
+
         const fetchBusDetails = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/buses/${busId}`);
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/buses/${busId}`);
+
+                  // 🔹 Add these lines
+                console.log("Bus API response:", response.data);
+                console.log("Seats:", response.data.seats);
+
                 setBus(response.data)
                 setSeats(response.data.seats || [])
             } catch (error) {
@@ -39,7 +69,7 @@ const BusSeats = ({ token }) => {
       
         try {
           const res = await axios.post(
-             `${process.env.REACT_APP_API_URL}/api/booking/`, 
+             `${import.meta.env.VITE_API_URL}/api/booking/`, 
             { seat: seatId },
             {
               headers: {

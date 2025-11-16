@@ -16,7 +16,7 @@ const BusList = ({token}) => {
     useEffect(() => {
         const fetchBuses = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/buses/`);
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/buses/`);
                 setBuses(response.data)
             } catch (error) {
                 console.log('error in fetching buses', error)
