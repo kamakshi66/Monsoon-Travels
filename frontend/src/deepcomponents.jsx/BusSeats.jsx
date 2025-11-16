@@ -39,7 +39,7 @@ const BusSeats = ({ token }) => {
       
         try {
           const res = await axios.post(
-            'http://localhost:8000/api/booking/',
+             `${process.env.REACT_APP_API_URL}/api/booking/`, 
             { seat: seatId },
             {
               headers: {
